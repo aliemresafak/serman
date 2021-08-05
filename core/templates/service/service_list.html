@@ -1,0 +1,37 @@
+{% extends '../base/_base.html' %} {% block content %}
+<div class="row justify-content-end">
+  <div class="col-2">
+    <a class="btn btn-outline-primary w-100 d-flex justify-content-center align-items-center gap-2"
+        href="{% url 'service_create' %}"
+    >
+   <i class="fas fa-plus"></i>
+   Kayıt Al</a>
+  </div>
+</div>
+<h2>Deneme</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Servis Numarası</th>
+          <th scope="col">Adı Soyadı</th>
+          <th scope="col">Açıklama</th>
+          <th scope="col">Ücreti</th>
+          <th>Durumu</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for service in service_list %}
+        <tr>
+          <th><a class="nav-link text-dark p-0" href="{% url 'service_detail' service.number %}">{{ service.number }}</a></th>
+          <th>
+          {{ service.user.name }} {{ service.user.surname }}</th>
+          <th>{{ service.information }}</th>
+          <th>{{ service.price.price }} TL</th>
+          <th>{{ service.status }} </th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endblock %}
+  </button>
+</button>

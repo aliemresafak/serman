@@ -1,0 +1,46 @@
+{% extends '../base/_base.html' %} {% block content %}
+
+<div class="row justify-content-end">
+  <div class="col-2">
+    <a
+      class="
+        btn btn-outline-primary
+        w-100
+        d-flex
+        justify-content-center
+        align-items-center
+        gap-2
+      "
+      href="{% url 'price_list_create' %}"
+    >
+      <i class="fas fa-plus"></i>
+      Fiyat Ekle</a
+    >
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th scope="col">İşlem</th>
+      <th scope="col">Fiyatı</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for price in price_list %}
+    <tr>
+      <th>{{price.pk}}</th>
+      <th>
+        <a
+          class="nav-link text-dark p-0"
+          href="{% url 'price_detail' pk=price.pk %}"
+        >
+          {{ price.name }}</a
+        >
+      </th>
+      <th>{{ price.price }}</th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

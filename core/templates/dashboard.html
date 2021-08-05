@@ -1,0 +1,52 @@
+{% extends 'base/_base.html' %} {% block content %}
+
+<div class="row">
+  <div class="row">{{ data.name }}</div>
+  <div class="col-md-3">
+    <div class="card col-md-3" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Günlük Kazanç</h5>
+        <p class="card-text h3">{{ sum_price }} ₺</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card col-md-3" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Tamir Bekleyen</h5>
+        <p class="card-text h3">-</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card col-md-3" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Tamir Edilen</h5>
+        <p class="card-text h3">-</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card col-md-3" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Tamiri Biten</h5>
+        <p class="card-text h3">-</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Adı Soyadı</th>
+        <th scope="col">Telefon</th>
+        <th scope="col">Arızası</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+{% endblock %}

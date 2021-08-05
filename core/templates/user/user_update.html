@@ -1,0 +1,48 @@
+{% extends '../base/_base.html' %} {% block content %}
+<h2>Update Sayfasi</h2>
+<form method="POST">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="name" class="form-label">Adı</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      value="{{ form.name.value }}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="surname" class="form-label">Soyadı</label>
+    <input
+      type="text"
+      class="form-control"
+      id="surname"
+      name="surname"
+      value="{{ form.surname.value }}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="identity_number" class="form-label">TC Kimlik No</label>
+    <input
+      type="text"
+      class="form-control"
+      id="identity_number"
+      name="identity_number"
+      value="{{ form.identity_number.value }}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="telephone_number" class="form-label">Telefon Numarası</label>
+    <input
+      type="text"
+      class="form-control"
+      id="telephone_number"
+      name="telephone_number"
+      value="{{form.telephone_number.value}}"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+
+{% endblock %}

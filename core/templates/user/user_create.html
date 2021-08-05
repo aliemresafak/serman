@@ -1,0 +1,33 @@
+{% extends '../base/_base.html' %} {% block content %}
+<h2>Müşteri Oluştur</h2>
+<form method="POST">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="name" class="form-label">Adı</label>
+    <input type="text" class="form-control" id="name" name="name" />
+  </div>
+  <div class="mb-3">
+    <label for="surname" class="form-label">Soyadı</label>
+    <input type="text" class="form-control" id="surname" name="surname" />
+  </div>
+  <div class="mb-3">
+    <label for="identity_number" class="form-label">TC Kimlik No</label>
+    <input
+      type="text"
+      class="form-control"
+      id="identity_number"
+      name="identity_number"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="telephone_number" class="form-label">Telefon Numarası</label>
+    <input
+      type="text"
+      class="form-control"
+      id="telephone_number"
+      name="telephone_number"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+{% endblock %}

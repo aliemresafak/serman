@@ -1,0 +1,39 @@
+{% extends '../base/_base.html' %} {% block content %}
+<h2>Kayıt Oluştur</h2>
+<form method="POST">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label" for="customer-select">Müşteriler</label>
+    <select class="form-control" name="user" id="customer-select">
+      <option value="">-- Bir müşteri seçiniz --</option>
+      {% for user in users %}
+      <option value="{{ user.pk }}">
+        {{user.name}} {{user.surname}} - {{user.identity_number}} {% endfor %}
+      </option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="information"> Açıklama </label>
+    <textarea
+      class="form-control"
+      name="information"
+      cols="40"
+      rows="10"
+      required=""
+      id="id_information"
+    ></textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="price-select">Fiyat Listesi</label>
+    <select class="form-control" name="price" id="price-select">
+      <option value="">-- Tamir işlemini seçiniz --</option>
+      {% for price in price_list %}
+      <option value="{{ price.pk }}">
+        {{price.name}} - {{price.price}} {% endfor %}
+      </option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+
+{% endblock %}
