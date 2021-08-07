@@ -32,19 +32,10 @@ class Price(CommonField):
         return f"{self.name}"
 
 class Service(CommonField):
-    WAIT = "WAIT"
-    FIXING = "FIXING"
-    FIXED = "FIXED"
-    STATUS_CHOICES = (
-        (WAIT, "Tamir Bekliyor"),
-        (FIXING, "Tamir Ediliyor"),
-        (FIXED, "Tamir Edildi"),
-    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     number = models.CharField(max_length=10, auto_created=True, default=generate_uuid, editable=False)
     information = models.TextField()
     price = models.ForeignKey(Price, on_delete=models.CASCADE)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=WAIT)
 
     def __str__(self) -> str:
         return f"{self.user.name}"
