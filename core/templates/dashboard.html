@@ -1,41 +1,25 @@
 {% extends 'base/_base.html' %} {% block content %}
 
 <div class="row">
-  <div class="row">{{ data.name }}</div>
-  <div class="col-md-3">
-    <div class="card col-md-3" style="width: 18rem">
+  <div class="col-xs-12 col-sm-6 col-lg-3 col-xl-3 my-2">
+    <div class="card">
       <div class="card-body">
         <h5 class="card-title">Günlük Kazanç</h5>
-        <p class="card-text h3">{{ sum_price }} ₺</p>
+        <p class="card-text h3">{{ sum_price_daily }} ₺</p>
       </div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card col-md-3" style="width: 18rem">
+  <div class="col-xs-12 col-sm-6 col-lg-3 col-xl-3 my-2">
+    <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Tamir Bekleyen</h5>
-        <p class="card-text h3">-</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card col-md-3" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Tamir Edilen</h5>
-        <p class="card-text h3">-</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card col-md-3" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Tamiri Biten</h5>
-        <p class="card-text h3">-</p>
+        <h5 class="card-title">Aylık Kazanç</h5>
+        <p class="card-text h3"> {{ sum_price_monthly }} ₺</p>
       </div>
     </div>
   </div>
 </div>
 <div class="row my-5">
+  <div class="col">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -47,6 +31,7 @@
     </thead>
     <tbody></tbody>
   </table>
+  </div>
 </div>
 
 {% endblock %}
