@@ -1,4 +1,5 @@
 from typing import Any, Dict
+from datetime import datetime
 from django.views.generic import TemplateView
 from .user import *
 from .price_list import *
@@ -12,9 +13,9 @@ class DashboardView(TemplateView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context["sum_price"] = 0 
 
-        for service in Service.objects.all():
-            context["sum_price"] += service.price.price
+        context["sum_price_daily"] = sum([service.price.price for service in Service.objects.all().filter(created_at__day=datetime.now().day)])
+        context["sum_price_monthly"] = sum([service.price.price for service in Service.objects.all().filter(created_at__month=datetime.now().month)])
+
         return context
 
