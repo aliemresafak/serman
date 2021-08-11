@@ -22,11 +22,12 @@ class ServiceCreateView(CreateView):
         return context
 
 
-
 class ServiceUpdateView(UpdateView):
     model = Service
     template_name = "service/service_update.html"
     success_url = "/service"
+    slug_field = "number"
+    fields = ["status"]
 
 class ServiceDetailView(DetailView):
     model = Service
