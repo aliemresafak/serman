@@ -15,6 +15,7 @@
           <th scope="col">Adı Soyadı</th>
           <th scope="col">Açıklama</th>
           <th scope="col">Ücreti</th>
+          <th scope="col">Durumu</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,7 @@
           {{ service.user.name }} {{ service.user.surname }}</th>
           <th>{{ service.information }}</th>
           <th>{{ service.price.price }} TL</th>
+          <th>{{ service.status }} </th>
         </tr>
         {% endfor %}
       </tbody>
