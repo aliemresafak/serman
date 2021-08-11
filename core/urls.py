@@ -14,5 +14,6 @@ urlpatterns = [
 
     path("service/", ServiceListView.as_view(), name="service_list"),
     path("service/create/", ServiceCreateView.as_view(), name="service_create"),
-    path("service/<slug:slug>", ServiceDetailView.as_view(), name="service_detail")
+    path("service/<slug:slug>", ServiceDetailView.as_view(), name="service_detail"),
+    path("service/<slug:slug>/update", ServiceUpdateView.as_view(), name="service_update")
 ]
