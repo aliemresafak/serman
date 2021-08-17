@@ -13,7 +13,6 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Adı Soyadı</th>
-          <th scope="col">TC Kimlik No</th>
           <th scope="col">Telefon</th>
         </tr>
       </thead>
@@ -22,7 +21,6 @@
         <tr>
           <th>{{ user.id }}</th>
           <th><a class="nav-link text-dark p-0" href="{% url 'user_detail' pk=user.pk %}"> {{ user.name }} {{ user.surname }}</a></th>
-          <th>{{ user.identity_number }}</th>
           <th>{{ user.telephone_number }}</th>
         </tr>
         {% endfor %}

@@ -3,7 +3,7 @@ from core.models import *
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ("name", "surname", "identity_number", "created_at")
+    list_display = ("name", "surname", "created_at")
 
 
 @admin.register(Service)
