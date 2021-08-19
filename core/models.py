@@ -14,7 +14,7 @@ class User(CommonField):
     telephone_number = models.CharField(max_length=11, default="00000000000")
 
     def __str__(self) -> str:
-        return f"{self.name} {self.surname} {self.identity_number}"
+        return f"{self.name} {self.surname}"
 
 def generate_uuid() -> str:
     uuid_arr = str(uuid4()).split("-")
