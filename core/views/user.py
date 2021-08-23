@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from core.models import User
 
-user_fields = ["name", "surname", "identity_number", "telephone_number"]
+user_fields = ["name", "surname", "telephone_number"]
 
 class UserListView(ListView):
     model = User
