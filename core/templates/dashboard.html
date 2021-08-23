@@ -35,7 +35,6 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Adı Soyadı</th>
         <th scope="col">Telefon</th>
         <th scope="col">Arızası</th>
@@ -43,10 +42,11 @@
     </thead>
     <tbody>
     {% for item in repair_waiting %}
-      <th>{{ item.id }}</th>
-      <th>{{ item.user }}</th>
-      <th>{{ item.user.phone }}</th>
+    <tr>
+      <th><a class="nav-link text-dark p-0" href="{% url 'user_detail' item.id%}">{{ item.user }}</a></th>
+      <th>{{ item.user.telephone_number }}</th>
       <th>{{ item.price.name }}</th>
+    </tr>
     {% endfor %}
     </tbody>
   </table>
@@ -55,7 +55,6 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Adı Soyadı</th>
         <th scope="col">Telefon</th>
         <th scope="col">Arızası</th>
@@ -63,9 +62,8 @@
     </thead>
     <tbody>
     {% for item in repair_fixing %}
-      <th>{{ item.id }}</th>
-      <th>{{ item.user }}</th>
-      <th>{{ item.user.phone }}</th>
+      <th><a class="nav-link text-dark p-0" href="{% url 'user_detail' item.id%}">{{ item.user }}</a></th>
+      <th>{{ item.user.telephone_number }}</th>
       <th>{{ item.price.name }}</th>
     {% endfor %}
     </tbody>
@@ -75,7 +73,6 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Adı Soyadı</th>
         <th scope="col">Telefon</th>
         <th scope="col">Arızası</th>
@@ -83,11 +80,13 @@
     </thead>
     <tbody>
     {% for item in repair_fixed %}
-      <th>{{ item.id }}</th>
-      <th>{{ item.user }}</th>
-      <th>{{ item.user.phone }}</th>
+    <tr>
+      <th><a class="nav-link text-dark p-0" href="{% url 'user_detail' item.id%}">{{ item.user }}</a></th>
+      <th>{{ item.user.telephone_number }}</th>
       <th>{{ item.price.name }}</th>
+    </tr>
     {% endfor %}
+
     </tbody>
   </table>
   </div>
