@@ -17,8 +17,15 @@ class ServiceCreateView(CreateView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context["users"] = User.objects.all()
-        context["price_list"] = Price.objects.all()
+        context["errors"] = list()
+        if len(User.objects.all()) == 0:
+            context["errors"].append("Lütfen müşteri kaydı yapınız")
+        else:
+            context["users"] = User.objects.all()
+        if len(Price.objects.all()) == 0:
+            context["errors"].append("Lütfen fiyat kaydı giriniz")
+        else:
+            context["price_list"] = Price.objects.all()
         return context
 
 
