@@ -47,9 +47,3 @@ class Service(CommonField):
 
     def __st__(self) -> str:
         return f"{self.user.name}"
-
-# class Service(CommonField):
-#     name = models.CharField(max_length=100)
-
-#     def __str__(self) -> str:
-#         return self.name
