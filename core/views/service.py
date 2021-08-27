@@ -17,15 +17,8 @@ class ServiceCreateView(CreateView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context["errors"] = list()
-        if User.objects.all().count() == 0:
-            context["errors"].append("Lütfen müşteri kaydı yapınız")
-        else:
-            context["users"] = User.objects.all()
-        if Price.objects.all().count() == 0:
-            context["errors"].append("Lütfen fiyat kaydı giriniz")
-        else:
-            context["price_list"] = Price.objects.all()
+        context["users"] = User.objects.all()
+        context["price_list"] = Price.objects.all()
         return context
 
 
@@ -35,6 +28,13 @@ class ServiceUpdateView(UpdateView):
     success_url = "/service"
     slug_field = "number"
     fields = ["status"]
+
+    context_object_name = "status_list"
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["status_list"] = Service.STATUS_CHOICES
+        return context
 
 class ServiceDetailView(DetailView):
     model = Service
