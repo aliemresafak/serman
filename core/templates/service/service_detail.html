@@ -7,9 +7,9 @@
     </div>
     <div>
       {% if service.status == "Tamir Edildi" %}
-        <div class="d-flex flex-column align-items-end justify-content-center">
-        <h5 class="h5">Tamir Saati</h5>
-        <span class="fs-4 fw-light">{{ service.updated_at|date:"d F Y G:i:s"}}</span>
+        <div class="d-flex flex-column align-items-end justify-content-center py-2 px-3 bg-success text-white rounded-3">
+          <h5 class="h5">Tamir Saati</h5>
+          <span class="fs-4">{{ service.updated_at|date:"d F Y G:i:s"}}</span>
         </div>
       {% else %}
         <a href="{% url 'service_update' service.number %}" class="btn btn-success">Güncelle</a>
