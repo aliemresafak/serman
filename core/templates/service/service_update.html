@@ -2,12 +2,21 @@
 
 
 {% block content %}
-
-    <h2>UpdateView</h2>
+<div class="row">
+    <div class="col-md-4">
     <form method="POST">
         {% csrf_token %}
-            {{form}}
+        <div class="mb-3">
+            <label for="" class="form-label">Telefon tamir durumu</label>
+            <select name="status" class="form-control">
+                <option value="">-- Tamir durumunu seçiniz --</option>
+                {% for key,value in status_list %}
+                    <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+            </select>
+        </div>
         <button class="btn btn-success">Güncelle</button>
     </form>
-
+    </div>
+</div>
 {% endblock %}
