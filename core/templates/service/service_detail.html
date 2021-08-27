@@ -6,9 +6,14 @@
       <h3 class="m-0">{{ service.user.name }} {{ service.user.surname }}</h3>
     </div>
     <div>
-      <a href="" class="btn btn-outline-primary">Tamir Ediliyor</a>
-      <a href="" class="btn btn-outline-success">Tamir Edildi</a>
-      <a href="{% url 'service_update' service.number %}" class="btn btn-success">Güncelle</a>
+      {% if service.status == "Tamir Edildi" %}
+        <div class="d-flex flex-column align-items-end justify-content-center">
+        <h5 class="h5">Tamir Saati</h5>
+        <span class="fs-4 fw-light">{{ service.updated_at|date:"d F Y G:i:s"}}</span>
+        </div>
+      {% else %}
+        <a href="{% url 'service_update' service.number %}" class="btn btn-success">Güncelle</a>
+      {% endif %}
     </div>
   </div>
 
