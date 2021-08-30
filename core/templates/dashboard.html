@@ -1,114 +1,579 @@
-{% extends 'base/_base.html' %} {% block content %}
+{% extends 'base/_base.html' %}
+{% block subheader %}
+anasayfa
+{% endblock %}
+{% block header %}
+Dashboard
+{% endblock %}
+{% block content %}
+<div class="row row-deck row-cards">
+  <div class="col-md-8">
+    <div class="card">
+      <ul class="nav nav-tabs" data-bs-toggle="tabs">
+        <li class="nav-item">
+          <a href="#all" class="nav-link active" data-bs-toggle="tab">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+              <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#waiting" class="nav-link" data-bs-toggle="tab">Tamir Bekleyen</a>
+        </li>
+        <li class="nav-item">
+          <a href="#fixing" class="nav-link" data-bs-toggle="tab">Tamir Edilen</a>
+        </li>
+        <li class="nav-item">
+          <a href="#fixed" class="nav-link" data-bs-toggle="tab">Tamir Edilmiş</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="all">
+            <div class="table-responsive">
+              <table class="table card-table table-vcenter text-nowrap datatable">
+                <thead>
+                  <tr>
+                    <th class="w-1">No.</th>
+                    <th>Adı Soyadı</th>
+                    <th>Telefon</th>
+                    <th>Arızası</th>
+                    <th>Durumu</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="text-muted">001402</span></td>
+                    <td><a href="#" class="text-reset" tabindex="-1">Adam McDany</a></td>
+                    <td>
+                      <span class="flag flag-country-gb"></span>
+                      11111111111
+                    </td>
+                    <td>
+                      iPhone 6 Screen
+                    </td>
+                    <td>
+                      <span class="badge bg-warning me-1"></span> Tamir Bekliyor
+                    </td>
+                    <td class="text-end">
+                      <span class="dropdown">
+                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
+                          data-bs-toggle="dropdown">Actions</button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                          <a class="dropdown-item" href="#">
+                            Action
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Another action
+                          </a>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane" id="waiting">
+            <div class="table-responsive">
+              <table class="table card-table table-vcenter text-nowrap datatable">
+                <thead>
+                  <tr>
+                    <th class="w-1">No.</th>
+                    <th>Adı Soyadı</th>
+                    <th>Telefon</th>
+                    <th>Arızası</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="text-muted">001402</span></td>
+                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Adam McDany</a></td>
+                    <td>
+                      <span class="flag flag-country-gb"></span>
+                      22222
+                    </td>
+                    <td>
+                      iPhone 7 Screen
+                    </td>
+                    <td class="text-end">
+                      <span class="dropdown">
+                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
+                          data-bs-toggle="dropdown">Actions</button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                          <a class="dropdown-item" href="#">
+                            Action
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Another action
+                          </a>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane" id="fixing">
+            <div class="table-responsive">
+              <table class="table card-table table-vcenter text-nowrap datatable">
+                <thead>
+                  <tr>
+                    <th class="w-1">No.</th>
+                    <th>Adı Soyadı</th>
+                    <th>Telefon</th>
+                    <th>Arızası</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="text-muted">001402</span></td>
+                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Adam McDany</a></td>
+                    <td>
+                      <span class="flag flag-country-gb"></span>
+                      22222
+                    </td>
+                    <td>
+                      iPhone 7 Screen
+                    </td>
+                    <td class="text-end">
+                      <span class="dropdown">
+                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
+                          data-bs-toggle="dropdown">Actions</button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                          <a class="dropdown-item" href="#">
+                            Action
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Another action
+                          </a>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane" id="fixed">
+            <div class="table-responsive">
+              <table class="table card-table table-vcenter text-nowrap datatable">
+                <thead>
+                  <tr>
+                    <th class="w-1">No.</th>
+                    <th>Adı Soyadı</th>
+                    <th>Telefon</th>
+                    <th>Arızası</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="text-muted">001402</span></td>
+                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Adam McDany</a></td>
+                    <td>
+                      <span class="flag flag-country-gb"></span>
+                      22222
+                    </td>
+                    <td>
+                      iPhone 7 Screen
+                    </td>
+                    <td class="text-end">
+                      <span class="dropdown">
+                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
+                          data-bs-toggle="dropdown">Actions</button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                          <a class="dropdown-item" href="#">
+                            Action
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Another action
+                          </a>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="row">
-  <div class="col-xs-12 col-sm-6 col-lg-3 col-xl-3 my-2">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Günlük Kazanç</h5>
-        <p class="card-text h3">{{ sum_price_daily }} ₺</p>
+  <div class="col-md-4">
+    <div class="row row-cards">
+      <div class="col-12">
+        <div class="card card-sm">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <span class="bg-blue text-white avatar">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
+                    <path d="M12 3v3m0 12v3" />
+                  </svg>
+                </span>
+              </div>
+              <div class="col">
+                <div class="font-weight-medium">
+                  132 Sales
+                </div>
+                <div class="text-muted">
+                  12 waiting payments
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card card-sm">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <span class="bg-green text-white avatar">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="6" cy="19" r="2" />
+                    <circle cx="17" cy="19" r="2" />
+                    <path d="M17 17h-11v-14h-2" />
+                    <path d="M6 5l14 1l-1 7h-13" />
+                  </svg>
+                </span>
+              </div>
+              <div class="col">
+                <div class="font-weight-medium">
+                  78 Orders
+                </div>
+                <div class="text-muted">
+                  32 shipped
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-6 col-lg-3 col-xl-3 my-2">
+  <!-- Tasks -->
+  <div class="col-md-12 col-lg-8">
     <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Aylık Kazanç</h5>
-        <p class="card-text h3"> {{ sum_price_monthly }} ₺</p>
+      <div class="card-header">
+        <h3 class="card-title">Tasks</h3>
+      </div>
+      <div class="table-responsive">
+        <table class="table card-table table-vcenter">
+          <tr>
+            <td class="w-1 pe-0">
+              <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked>
+            </td>
+            <td class="w-100">
+              <a href="#" class="text-reset">Extend the data model.</a>
+            </td>
+            <td class="text-nowrap text-muted">
+              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="4" y="5" width="16" height="16" rx="2" />
+                <line x1="16" y1="3" x2="16" y2="7" />
+                <line x1="8" y1="3" x2="8" y2="7" />
+                <line x1="4" y1="11" x2="20" y2="11" />
+                <line x1="11" y1="15" x2="12" y2="15" />
+                <line x1="12" y1="15" x2="12" y2="18" />
+              </svg>
+              January 01, 2019
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l5 5l10 -10" />
+                </svg>
+                2/7
+              </a>
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+                  <line x1="8" y1="9" x2="16" y2="9" />
+                  <line x1="8" y1="13" x2="14" y2="13" />
+                </svg>
+                3
+              </a>
+            </td>
+            <td>
+              <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-1 pe-0">
+              <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task">
+            </td>
+            <td class="w-100">
+              <a href="#" class="text-reset">Verify the event flow.</a>
+            </td>
+            <td class="text-nowrap text-muted">
+              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="4" y="5" width="16" height="16" rx="2" />
+                <line x1="16" y1="3" x2="16" y2="7" />
+                <line x1="8" y1="3" x2="8" y2="7" />
+                <line x1="4" y1="11" x2="20" y2="11" />
+                <line x1="11" y1="15" x2="12" y2="15" />
+                <line x1="12" y1="15" x2="12" y2="18" />
+              </svg>
+              January 01, 2019
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l5 5l10 -10" />
+                </svg>
+                3/10
+              </a>
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+                  <line x1="8" y1="9" x2="16" y2="9" />
+                  <line x1="8" y1="13" x2="14" y2="13" />
+                </svg>
+                6
+              </a>
+            </td>
+            <td>
+              <span class="avatar avatar-sm">JL</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-1 pe-0">
+              <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task">
+            </td>
+            <td class="w-100">
+              <a href="#" class="text-reset">Database backup and maintenance</a>
+            </td>
+            <td class="text-nowrap text-muted">
+              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="4" y="5" width="16" height="16" rx="2" />
+                <line x1="16" y1="3" x2="16" y2="7" />
+                <line x1="8" y1="3" x2="8" y2="7" />
+                <line x1="4" y1="11" x2="20" y2="11" />
+                <line x1="11" y1="15" x2="12" y2="15" />
+                <line x1="12" y1="15" x2="12" y2="18" />
+              </svg>
+              January 01, 2019
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l5 5l10 -10" />
+                </svg>
+                0/6
+              </a>
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+                  <line x1="8" y1="9" x2="16" y2="9" />
+                  <line x1="8" y1="13" x2="14" y2="13" />
+                </svg>
+                1
+              </a>
+            </td>
+            <td>
+              <span class="avatar avatar-sm" style="background-image: url(./static/avatars/002m.jpg)"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-1 pe-0">
+              <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked>
+            </td>
+            <td class="w-100">
+              <a href="#" class="text-reset">Identify the implementation team.</a>
+            </td>
+            <td class="text-nowrap text-muted">
+              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="4" y="5" width="16" height="16" rx="2" />
+                <line x1="16" y1="3" x2="16" y2="7" />
+                <line x1="8" y1="3" x2="8" y2="7" />
+                <line x1="4" y1="11" x2="20" y2="11" />
+                <line x1="11" y1="15" x2="12" y2="15" />
+                <line x1="12" y1="15" x2="12" y2="18" />
+              </svg>
+              January 01, 2019
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l5 5l10 -10" />
+                </svg>
+                6/10
+              </a>
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+                  <line x1="8" y1="9" x2="16" y2="9" />
+                  <line x1="8" y1="13" x2="14" y2="13" />
+                </svg>
+                12
+              </a>
+            </td>
+            <td>
+              <span class="avatar avatar-sm" style="background-image: url(./static/avatars/003m.jpg)"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-1 pe-0">
+              <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task">
+            </td>
+            <td class="w-100">
+              <a href="#" class="text-reset">Define users and workflow</a>
+            </td>
+            <td class="text-nowrap text-muted">
+              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="4" y="5" width="16" height="16" rx="2" />
+                <line x1="16" y1="3" x2="16" y2="7" />
+                <line x1="8" y1="3" x2="8" y2="7" />
+                <line x1="4" y1="11" x2="20" y2="11" />
+                <line x1="11" y1="15" x2="12" y2="15" />
+                <line x1="12" y1="15" x2="12" y2="18" />
+              </svg>
+              January 01, 2019
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l5 5l10 -10" />
+                </svg>
+                3/7
+              </a>
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+                  <line x1="8" y1="9" x2="16" y2="9" />
+                  <line x1="8" y1="13" x2="14" y2="13" />
+                </svg>
+                5
+              </a>
+            </td>
+            <td>
+              <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000f.jpg)"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-1 pe-0">
+              <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked>
+            </td>
+            <td class="w-100">
+              <a href="#" class="text-reset">Check Pull Requests</a>
+            </td>
+            <td class="text-nowrap text-muted">
+              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="4" y="5" width="16" height="16" rx="2" />
+                <line x1="16" y1="3" x2="16" y2="7" />
+                <line x1="8" y1="3" x2="8" y2="7" />
+                <line x1="4" y1="11" x2="20" y2="11" />
+                <line x1="11" y1="15" x2="12" y2="15" />
+                <line x1="12" y1="15" x2="12" y2="18" />
+              </svg>
+              January 01, 2019
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l5 5l10 -10" />
+                </svg>
+                2/9
+              </a>
+            </td>
+            <td class="text-nowrap">
+              <a href="#" class="text-muted">
+                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+                  <line x1="8" y1="9" x2="16" y2="9" />
+                  <line x1="8" y1="13" x2="14" y2="13" />
+                </svg>
+                3
+              </a>
+            </td>
+            <td>
+              <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
-</div>
-<div class="row my-5">
-<ul class="nav nav-pills mb-3 px-3" id="pills-tab" role="tablist" >
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tamir Bekleyen</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tamir Ediliyor</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Tamir Edildi</button>
-  </li>
-</ul>
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-  {% if repair_waiting %}
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Adı Soyadı</th>
-          <th scope="col">Telefon</th>
-          <th scope="col">Arızası</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in repair_waiting %}
-        <tr>
-          <th><a class="nav-link text-dark p-0" href="{% url 'user_detail' item.id%}">{{ item.user }}</a></th>
-          <th>{{ item.user.telephone_number }}</th>
-          <th>{{ item.price.name }}</th>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-  <div class="alert alert-success" role="alert">
-      Bekleyen kayıt yoktur
-  </div>
-  {% endif %}
-  </div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-  {% if repair_fixing %}
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Adı Soyadı</th>
-          <th scope="col">Telefon</th>
-          <th scope="col">Arızası</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in repair_fixing %}
-        <tr>
-          <th><a class="nav-link text-dark p-0" href="{% url 'user_detail' item.id%}">{{ item.user }}</a></th>
-          <th>{{ item.user.telephone_number }}</th>
-          <th>{{ item.price.name }}</th>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-  <div class="alert alert-success" role="alert">
-      Bekleyen kayıt yoktur
-  </div>
-  {% endif %}
-  </div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-  {% if repair_fixed %}
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Adı Soyadı</th>
-          <th scope="col">Telefon</th>
-          <th scope="col">Arızası</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in repair_fixed %}
-        <tr>
-          <th><a class="nav-link text-dark p-0" href="{% url 'user_detail' item.id%}">{{ item.user }}</a></th>
-          <th>{{ item.user.telephone_number }}</th>
-          <th>{{ item.price.name }}</th>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-  <div class="alert alert-success" role="alert">
-      Bekleyen kayıt yoktur
-  </div>
-  {% endif %}
-  </div>
-</div>
+  <!-- End Tasks -->
 </div>
 {% endblock %}
