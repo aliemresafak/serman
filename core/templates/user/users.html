@@ -1,4 +1,5 @@
-{% extends '../base/_base.html' %} {% block content %}
+{% extends '../base/_base.html' %}
+{% block content %}
 <div class="row justify-content-end mb-3">
   <div class="col col-md-4 col-xl-2">
     <a class="btn btn-outline-primary w-100 d-flex justify-content-center align-items-center gap-2"
@@ -7,22 +8,24 @@
       Müşteri Ekle</a>
   </div>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Adı Soyadı</th>
-      <th scope="col">Telefon</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for user in users %}
-    <tr>
-      <th><a class="nav-link text-dark p-0" href="{% url 'customer_detail' pk=user.pk %}"> {{ user }} </a></th>
-      <th>{{ user.telephone_number }}</th>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div class="card">
+  <div class="table-responsive mb-0">
+    <table class="table card-table table-vcenter text-nowrap datatable table-hover">
+      <thead>
+        <tr>
+          <th>Adı Soyadı</th>
+          <th>Telefon</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <th><a class="nav-link text-dark p-0" href="{% url 'customer_detail' pk=user.pk %}"> {{ user }} </a></th>
+          <th>{{ user.telephone_number }}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 {% endblock %}
-</button>
-</button>

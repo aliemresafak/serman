@@ -2,43 +2,40 @@
 
 <div class="row justify-content-end mb-3">
   <div class="col col-md-4 col-xl-2">
-    <a
-      class="
+    <a class="
         btn btn-outline-primary
         w-100
         d-flex
         justify-content-center
         align-items-center
         gap-2
-      "
-      href="{% url 'price_list_create' %}"
-    >
+      " href="{% url 'price_list_create' %}">
       <i class="fas fa-plus"></i>
-      Fiyat Ekle</a
-    >
+      Fiyat Ekle</a>
   </div>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">İşlem</th>
-      <th scope="col">Fiyatı</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for price in price_list %}
-    <tr>
-      <th>
-        <a
-          class="nav-link text-dark p-0"
-          href="{% url 'price_detail' pk=price.pk %}"
-        >
-          {{ price.name }}</a
-        >
-      </th>
-      <th>{{ price.price }}</th>
-    </tr>
-    {% endfor %}
-  </tbody>
+<div class="card">
+  <div class="table-responsive mb-0">
+    <table class="table card-table table-vcenter text-nowrap datatable table-hover">
+      <thead>
+        <tr>
+          <th>İşlem</th>
+          <th>Fiyatı</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for price in price_list %}
+        <tr>
+          <th>
+            <a class="nav-link text-dark p-0" href="{% url 'price_detail' pk=price.pk %}">
+              {{ price.name }}</a>
+          </th>
+          <th>{{ price.price }}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 </table>
 {% endblock %}

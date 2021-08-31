@@ -2,28 +2,33 @@
 <div class="row justify-content-end mb-3">
   <div class="col col-md-4 col-xl-2">
     <a class="btn btn-outline-primary w-100 d-flex justify-content-center align-items-center gap-2"
-        href="{% url 'service_create' %}"
-    >
-   <i class="fas fa-plus"></i>
-   Kayıt Al</a>
+      href="{% url 'service_create' %}">
+      <i class="fas fa-plus"></i>
+      Kayıt Al</a>
   </div>
 </div>
-    <table class="table table-striped">
+<div class="card">
+  <div class="table-responsive mb-0">
+    <table class="table card-table table-vcenter text-nowrap datatable table-hover">
       <thead>
         <tr>
-          <th scope="col">Servis Numarası</th>
-          <th scope="col">Adı Soyadı</th>
-          <th scope="col">Açıklama</th>
-          <th scope="col">Ücreti</th>
-          <th scope="col">Durumu</th>
+          <th>Servis Numarası</th>
+          <th>Adı Soyadı</th>
+          <th>Açıklama</th>
+          <th>Ücreti</th>
+          <th>Durumu</th>
         </tr>
       </thead>
       <tbody>
         {% for service in service_list %}
         <tr>
-          <th><a class="nav-link text-dark p-0" href="{% url 'service_detail' service.number %}">{{ service.number }}</a></th>
           <th>
-          {{ service.user.name }} {{ service.user.surname }}</th>
+            <a class="nav-link text-dark p-0" href="{% url 'service_detail' service.number %}">
+              {{ service.number }}
+            </a>
+          </th>
+          <th>
+            {{ service.user.name }} {{ service.user.surname }}</th>
           <th>{{ service.information }}</th>
           <th>{{ service.price.price }} TL</th>
           <th>{{ service.status }} </th>
@@ -31,6 +36,6 @@
         {% endfor %}
       </tbody>
     </table>
-    {% endblock %}
-  </button>
-</button>
+  </div>
+</div>
+{% endblock %}
