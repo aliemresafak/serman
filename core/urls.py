@@ -3,10 +3,10 @@ from .views import *
 
 urlpatterns = [
     path("", DashboardView.as_view(), name="home"),
-    path("users/", UserListView.as_view(), name="users"),
-    path("users/create", UserCreateView.as_view(), name="user_create"),
-    path("users/<pk>", UserDetailView.as_view(), name="user_detail"),
-    path("users/<pk>/update", UserUpdateView.as_view(), name="user_update"),
+    path("customer/", UserListView.as_view(), name="customer_list"),
+    path("customer/create", UserCreateView.as_view(), name="customer_create"),
+    path("customer/<pk>", UserDetailView.as_view(), name="customer_detail"),
+    path("customer/<pk>/update", UserUpdateView.as_view(), name="customer_update"),
     path("price/", PriceListView.as_view(), name="price_list"),
     path("price/create", PriceCreateView.as_view(), name="price_list_create"),
     path("price/<pk>", PriceDetailView.as_view(), name="price_detail"),
