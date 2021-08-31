@@ -76,6 +76,7 @@
           </div>
           <div class="tab-pane" id="waiting">
             <div class="table-responsive">
+              {% if daily_repair_waiting %}
               <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
                   <tr>
@@ -100,25 +101,15 @@
                     <td>
                       {{ data.price }}
                     </td>
-                    <!-- <td class="text-end">
-                      <span class="dropdown">
-                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                          data-bs-toggle="dropdown">Actions</button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                          <a class="dropdown-item" href="#">
-                            Action
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            Another action
-                          </a>
-                        </div>
-                      </span>
-                    </td> -->
                   </tr>
-
                   {% endfor %}
                 </tbody>
               </table>
+              {% else %}
+              <div class="alert alert-success" role="alert">
+                Tamir bekleyen cihaz yoktur
+              </div>
+              {% endif %}
             </div>
           </div>
           <div class="tab-pane" id="fixing">
@@ -218,7 +209,7 @@
   </div>
 
   <div class="col-md-4">
-    <div class="row row-cards">
+    <div class="d-flex flex-column flex-grow-1 gap-3">
       <div class="col-12">
         <div class="card card-sm">
           <div class="card-body">
