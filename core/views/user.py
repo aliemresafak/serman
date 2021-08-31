@@ -11,17 +11,17 @@ class UserListView(ListView):
 class UserCreateView(CreateView):
     model = User
     template_name = "user/user_create.html"
-    success_url = "/users"
+    success_url = "/customer"
     fields = user_fields
 
 class UserDetailView(DetailView):
     model = User
     template_name = "user/user_detail.html"
-    context_object_name = "user"
+    context_object_name = "customer"
     slug_field = "pk"
 
 class UserUpdateView(UpdateView):
     model = User
     template_name = "user/user_update.html"
-    success_url = "/users"
+    success_url = "/customer"
     fields = user_fields
