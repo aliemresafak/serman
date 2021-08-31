@@ -187,12 +187,11 @@
                     <th>Telefon</th>
                     <th>Arızası</th>
                     <th>Durumu</th>
-                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <!-- waiting bg-warning fixing bg-info fixed bg-success -->
-                  {% for data in daily_repair_all %}
+                  {% for data in not_completed_fixing %}
                   <tr>
                     <td><span class="text-muted">{{ data.number }}</span></td>
                     <td><a href="#" class="text-reset" tabindex="-1">{{ data.user.name }} {{ data.user.surname }}</a>
@@ -206,20 +205,6 @@
                     </td>
                     <td>
                       <span class="badge bg-warning me-1"></span> {{ data.status }}
-                    </td>
-                    <td class="text-end">
-                      <span class="dropdown">
-                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                          data-bs-toggle="dropdown">Actions</button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                          <a class="dropdown-item" href="#">
-                            Action
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            Another action
-                          </a>
-                        </div>
-                      </span>
                     </td>
                   </tr>
                   {% endfor %}
