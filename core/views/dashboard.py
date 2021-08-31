@@ -9,11 +9,10 @@ class DashboardView(TemplateView):
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
 
-        context["sum_price_daily"] = sum([service.price.price for service in Service.objects.all().filter(created_at__day=datetime.now().day)])
-        context["sum_price_monthly"] = sum([service.price.price for service in Service.objects.all().filter(created_at__month=datetime.now().month)])
+        context["daily_repair_all"] = Service.objects.all().filter(created_at__day=datetime.now().day)
 
-        context["repair_waiting"] = Service.objects.all().filter(status=Service.WAITING)
-        context["repair_fixing"] = Service.objects.all().filter(status=Service.FIXING)
-        context["repair_fixed"] = Service.objects.all().filter(status=Service.FIXED)
+        context["daily_repair_waiting"] = Service.objects.all().filter(status=Service.WAITING, created_at__day=datetime.now().day)
+        context["daily_repair_fixing"] = Service.objects.all().filter(status=Service.FIXING, created_at__day=datetime.now().day)
+        context["daily_repair_fixed"] = Service.objects.all().filter(status=Service.FIXED, created_at__day=datetime.now().day)
 
         return context 
