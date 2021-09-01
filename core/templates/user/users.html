@@ -3,15 +3,27 @@
 {% block pretitle %} Servis {% endblock %}
 {% block title %} Dashboard {% endblock %}
 
+{% block create_button %}
+<a href="{% url 'customer_create' %}" class="btn btn-primary d-none d-sm-inline-block">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <line x1="12" y1="5" x2="12" y2="19"></line>
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+  </svg>
+  Müşteri Ekle
+</a>
+<a href="#" class="btn btn-primary d-sm-none btn-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <line x1="12" y1="5" x2="12" y2="19"></line>
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+  </svg>
+</a>
+{% endblock %}
+
 {% block content %}
-<div class="row justify-content-end mb-3">
-  <div class="col col-md-4 col-xl-2">
-    <a class="btn btn-outline-primary w-100 d-flex justify-content-center align-items-center gap-2"
-      href="{% url 'customer_create' %}">
-      <i class="fas fa-plus"></i>
-      Müşteri Ekle</a>
-  </div>
-</div>
 <div class="card">
   <div class="table-responsive mb-0">
     <table class="table card-table table-vcenter text-nowrap datatable table-hover">
