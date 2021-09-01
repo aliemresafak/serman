@@ -75,7 +75,7 @@
             </div>
           </div>
           <div class="tab-pane" id="waiting">
-            <div class="table-responsive">
+            <div class="table-responsive mb-0">
               {% if daily_repair_waiting %}
               <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
@@ -113,7 +113,8 @@
             </div>
           </div>
           <div class="tab-pane" id="fixing">
-            <div class="table-responsive">
+            <div class="table-responsive mb-0">
+              {% if daily_repair_fixing %}
               <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
                   <tr>
@@ -138,10 +139,16 @@
                   {% endfor %}
                 </tbody>
               </table>
+              {% else %}
+              <div class="alert alert-success" role="alert">
+                Tamiri devam eden cihaz yoktur
+              </div>
+              {% endif %}
             </div>
           </div>
           <div class="tab-pane" id="fixed">
-            <div class="table-responsive">
+            <div class="table-responsive mb-0">
+              {% if daily_repair_fixed %}
               <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
                   <tr>
@@ -166,10 +173,16 @@
                   {% endfor %}
                 </tbody>
               </table>
+              {% else %}
+              <div class="alert alert-success" role="alert">
+                Tamiri bitmiş cihaz yoktur
+              </div>
+              {% endif %}
             </div>
           </div>
           <div class="tab-pane" id="past">
-            <div class="table-responsive">
+            <div class="table-responsive mb-0">
+              {% if not_completed_fixing %}
               <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
                   <tr>
@@ -201,6 +214,11 @@
                   {% endfor %}
                 </tbody>
               </table>
+              {% else %}
+              <div class="alert alert-success" role="alert">
+                Tamiri devam eden cihaz yoktur
+              </div>
+              {% endif %}
             </div>
           </div>
         </div>
