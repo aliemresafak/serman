@@ -1,5 +1,11 @@
-{% extends '../base/_base.html' %} {% block content %}
-<h2>Kayıt Oluştur</h2>
+{% extends '../base/_base.html' %}
+{% block pretitle %}
+Servis
+{% endblock %}
+{% block title %}
+Kayıt Oluştur
+{% endblock %}
+{% block content %}
 <div class="mb-3" style="display: flex; flex-direction:column;">
   {% for error in errors%}
   <span>{{ error }}</span>

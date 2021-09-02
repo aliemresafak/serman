@@ -1,24 +1,29 @@
-{% extends '../base/_base.html' %} {% block content %}
-<h2>Müşteri Oluştur</h2>
-<form method="POST">
-  {% csrf_token %}
-  <div class="mb-3">
-    <label for="name" class="form-label">Adı</label>
-    <input type="text" class="form-control" id="name" name="name" />
+{% extends '../base/_base.html' %}
+{% block pretitle %}
+Müşteri
+{% endblock %}
+{% block title %}
+Müşteri Oluştur
+{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="name" class="form-label">Adı</label>
+        <input type="text" class="form-control" id="name" name="name" />
+      </div>
+      <div class="mb-3">
+        <label for="surname" class="form-label">Soyadı</label>
+        <input type="text" class="form-control" id="surname" name="surname" />
+      </div>
+      <div class="mb-3">
+        <label for="telephone_number" class="form-label">Telefon Numarası</label>
+        <input type="text" class="form-control" id="telephone_number" name="telephone_number" />
+      </div>
+      <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="surname" class="form-label">Soyadı</label>
-    <input type="text" class="form-control" id="surname" name="surname" />
-  </div>
-  <div class="mb-3">
-    <label for="telephone_number" class="form-label">Telefon Numarası</label>
-    <input
-      type="text"
-      class="form-control"
-      id="telephone_number"
-      name="telephone_number"
-    />
-  </div>
-  <button type="submit" class="btn btn-primary">Kaydet</button>
-</form>
+</div>
 {% endblock %}

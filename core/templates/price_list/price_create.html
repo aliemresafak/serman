@@ -1,19 +1,29 @@
-{% extends '../base/_base.html' %} {% block content %}
-<h2>Fiyat Ekle</h2>
+{% extends '../base/_base.html' %}
+{% block pretitle %}
+Fiyat Listesi
+{% endblock %}
+{% block title %}
+Fiyat Ekle
+{% endblock %}
+{% block content %}
 <div class="row">
-  <div class="col-4">
-    <form method="POST">
-      {% csrf_token %}
-      <div class="mb-3">
-        <label for="name" class="form-label">Adı</label>
-        <input type="text" class="form-control" id="name" name="name" />
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <form method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label">Adı</label>
+            <input type="text" class="form-control" id="name" name="name" />
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" class="form-control" id="price" name="price" />
+          </div>
+          <button class="btn btn-primary">Kaydet</button>
+        </form>
       </div>
-      <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
-        <input type="text" class="form-control" id="price" name="price" />
-      </div>
-      <button class="btn btn-primary">Kaydet</button>
-    </form>
+    </div>
   </div>
 </div>
 {% endblock %}
