@@ -1,14 +1,14 @@
 from typing import Any, Dict
 from django.views.generic import ListView, CreateView, UpdateView, DetailView
 from core.models import Service, User, Price
+from core.mixins import LoginRequiredMixin
 
-
-class ServiceListView(ListView):
+class ServiceListView(LoginRequiredMixin, ListView):
     model = Service
     template_name = "service/service_list.html"
     context_object_name = "service_list"
 
-class ServiceCreateView(CreateView):
+class ServiceCreateView(LoginRequiredMixin, CreateView):
     model = Service
     template_name = "service/service_create.html"
     success_url = "/service"
@@ -22,7 +22,7 @@ class ServiceCreateView(CreateView):
         return context
 
 
-class ServiceUpdateView(UpdateView):
+class ServiceUpdateView(LoginRequiredMixin, UpdateView):
     model = Service
     template_name = "service/service_update.html"
     success_url = "/service"
@@ -36,7 +36,7 @@ class ServiceUpdateView(UpdateView):
         context["status_list"] = Service.STATUS_CHOICES
         return context
 
-class ServiceDetailView(DetailView):
+class ServiceDetailView(LoginRequiredMixin, DetailView):
     model = Service
     template_name = "service/service_detail.html"
     context_object_name = "service"

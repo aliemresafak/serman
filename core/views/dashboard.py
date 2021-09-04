@@ -2,9 +2,12 @@ from typing import Any, Dict
 from django.views.generic import TemplateView
 from datetime import datetime
 from core.models import Service
+from core.mixins import LoginRequiredMixin
 
-class DashboardView(TemplateView):
+class DashboardView(LoginRequiredMixin, TemplateView):
     template_name = "dashboard.html"
+    login_url = "/auth/login/"
+    redirect_field_name = 'redirect_to'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
