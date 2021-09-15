@@ -1,7 +1,7 @@
 from typing import Any, Dict
 from django.views.generic import ListView, CreateView, UpdateView, DetailView
 from core.models import Service, User, Price
-from core.mixins import LoginRequiredMixin
+from .base import LoginRequiredMixin
 
 class ServiceListView(LoginRequiredMixin, ListView):
     model = Service

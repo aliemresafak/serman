@@ -2,7 +2,7 @@ from typing import Any, Dict
 from django.views.generic import TemplateView
 from datetime import datetime
 from core.models import Service
-from core.mixins import LoginRequiredMixin
+from .base import LoginRequiredMixin
 
 class DashboardView(LoginRequiredMixin, TemplateView):
     template_name = "dashboard.html"

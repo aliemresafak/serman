@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from core.models import User
-from core.mixins import LoginRequiredMixin
+from .base import LoginRequiredMixin
 user_fields = ["name", "surname", "telephone_number"]
 
 class UserListView(LoginRequiredMixin, ListView):

@@ -1,7 +1,7 @@
 from typing import List
 from django.views.generic import ListView, CreateView, UpdateView, DetailView
 from core.models import Price
-from core.mixins import LoginRequiredMixin
+from .base import LoginRequiredMixin
 
 class PriceListView(LoginRequiredMixin, ListView):
     model = Price 
