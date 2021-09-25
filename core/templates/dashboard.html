@@ -4,21 +4,10 @@
 {% block content %}
 <div class="row row-deck row-cards">
   <div class="col-md-8">
-    <div class="card">
+    <div class="card" style="height: 20em;">
       <ul class="nav nav-tabs" data-bs-toggle="tabs">
         <li class="nav-item">
-          <a href="#all" class="nav-link active" data-bs-toggle="tab">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
-              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
-              <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
-            </svg>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#waiting" class="nav-link" data-bs-toggle="tab">Tamir Bekleyen</a>
+          <a href="#waiting" class="nav-link active" data-bs-toggle="tab">Tamir Bekleyen</a>
         </li>
         <li class="nav-item">
           <a href="#fixing" class="nav-link" data-bs-toggle="tab">Tamir Edilen</a>
@@ -39,42 +28,7 @@
       </ul>
       <div class="card-body">
         <div class="tab-content">
-          <div class="tab-pane active show" id="all">
-            <div class="table-responsive">
-              <table class="table card-table table-vcenter text-nowrap datatable">
-                <thead>
-                  <tr>
-                    <th class="w-1">No.</th>
-                    <th>Adı Soyadı</th>
-                    <th>Telefon</th>
-                    <th>Arızası</th>
-                    <th>Durumu</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- waiting bg-warning fixing bg-info fixed bg-success -->
-                  {% for data in daily_repair_all %}
-                  <tr>
-                    <td><span class="text-muted">{{ data.number }}</span></td>
-                    <td><a href="#" class="text-reset" tabindex="-1">{{ data.user.name }} {{ data.user.surname }}</a>
-                    </td>
-                    <td>
-                      <span class="flag flag-country-gb"></span>
-                      {{ data.user.telephone_number}}
-                    </td>
-                    <td>
-                      {{ data.price.name }} - {{ data.price.price }}
-                    </td>
-                    <td>
-                      <span class="badge bg-warning me-1"></span> {{ data.status }}
-                    </td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="tab-pane" id="waiting">
+          <div class="tab-pane active" id="waiting">
             <div class="table-responsive mb-0">
               {% if daily_repair_waiting %}
               <table class="table card-table table-vcenter text-nowrap datatable">
@@ -226,7 +180,7 @@
     </div>
   </div>
 
-  <div class="col-md-4">
+  <!-- <div class="col-md-4">
     <div class="d-flex flex-column flex-grow-1 gap-3">
       <div class="col-12">
         <div class="card card-sm">
@@ -283,9 +237,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Tasks -->
-  <div class="col-md-12 col-lg-8">
+  <!-- <div class="col-md-12 col-lg-8">
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Tasks</h3>
@@ -300,8 +254,6 @@
               <a href="#" class="text-reset">Extend the data model.</a>
             </td>
             <td class="text-nowrap text-muted">
-              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <rect x="4" y="5" width="16" height="16" rx="2" />
@@ -315,7 +267,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -326,7 +277,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -349,7 +299,6 @@
               <a href="#" class="text-reset">Verify the event flow.</a>
             </td>
             <td class="text-nowrap text-muted">
-              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
               <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -364,7 +313,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -375,7 +323,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -398,7 +345,6 @@
               <a href="#" class="text-reset">Database backup and maintenance</a>
             </td>
             <td class="text-nowrap text-muted">
-              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
               <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -413,7 +359,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -424,7 +369,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -447,7 +391,6 @@
               <a href="#" class="text-reset">Identify the implementation team.</a>
             </td>
             <td class="text-nowrap text-muted">
-              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
               <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -462,7 +405,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -473,7 +415,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -496,7 +437,6 @@
               <a href="#" class="text-reset">Define users and workflow</a>
             </td>
             <td class="text-nowrap text-muted">
-              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
               <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -511,7 +451,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -522,7 +461,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -545,7 +483,6 @@
               <a href="#" class="text-reset">Check Pull Requests</a>
             </td>
             <td class="text-nowrap text-muted">
-              <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
               <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -560,7 +497,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/check -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -571,7 +507,6 @@
             </td>
             <td class="text-nowrap">
               <a href="#" class="text-muted">
-                <!-- Download SVG icon from http://tabler-icons.io/i/message -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                   stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -589,7 +524,7 @@
         </table>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- End Tasks -->
 </div>
 {% endblock %}
