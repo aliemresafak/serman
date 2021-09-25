@@ -45,5 +45,5 @@ class Service(CommonField):
     price = models.ForeignKey(Price, on_delete=models.CASCADE)
     status =models.CharField(choices=STATUS_CHOICES, max_length=14, default=WAITING)
 
-    def __st__(self) -> str:
+    def __str__(self) -> str:
         return f"{self.user.name}"
