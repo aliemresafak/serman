@@ -1,0 +1,29 @@
+{% extends 'base/_base.html' %}
+{% block pretitle %} Servis Durumu {% endblock %}
+{% block title %} {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-xl-12">
+                    <label class="form-label d-flex gap-2">Servis Numarasi
+                        <div class="col-auto align-self-center">
+                            <span class="form-help" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="<p>ZIP Code must be US or CDN format. You can use an extended ZIP+4 code to determine address more accurately.</p>
+                        <p class='mb-0'><a href='#'>USP ZIP codes lookup tools</a></p>
+                        " data-bs-html="true" data-bs-original-title="" title="">?</span>
+                        </div>
+                    </label>
+
+                    <div class="row">
+                        <div class="d-flex gap-2">
+                            <input type="text" class="form-control" placeholder="Servis numarasini giriniz">
+                            <button type="submit" class="btn btn-primary ms-auto">Ara</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
