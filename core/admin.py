@@ -13,4 +13,4 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(Price)
 class PriceListAdmin(admin.ModelAdmin):
-    list_display = ("name", "price")
+    list_display = ("name", "price", "amount")

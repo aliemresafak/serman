@@ -11,7 +11,11 @@ class PriceCreateView(LoginRequiredMixin, CreateView):
     model = Price
     template_name = "price_list/price_create.html"
     success_url = "/price"
-    fields = ["name", "price"]
+    fields = ["name", "price", "amount"]
+
+
+    def post(self, request, *args: str, **kwargs):
+        return super().post(request, *args, **kwargs)
 
 class PriceUpdateView(LoginRequiredMixin, UpdateView):
     model = Price

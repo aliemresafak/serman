@@ -91,5 +91,5 @@ if DEBUG:
 else:
     STATIC_ROOT = BASE_DIR / "static"
 
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/auth/login"
+LOGIN_REDIRECT_URL = "/dashboard"
+LOGOUT_REDIRECT_URL = ""
