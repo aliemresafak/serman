@@ -30,6 +30,7 @@
         <tr>
           <th>İşlem</th>
           <th>Fiyatı</th>
+          <th>Kalan</th>
         </tr>
       </thead>
       <tbody>
@@ -40,6 +41,7 @@
               {{ price.name }}</a>
           </th>
           <th>{{ price.price }} TL</th>
+          <th>{{ price.amount }} Adet</th>
         </tr>
         {% endfor %}
       </tbody>

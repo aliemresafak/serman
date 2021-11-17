@@ -35,7 +35,7 @@ Kayıt Oluştur
       <option value="">-- Tamir işlemini seçiniz --</option>
       {% for price in price_list %}
       <option value="{{ price.pk }}">
-        {{price.name}} - {{price.price}} {% endfor %}
+        {{price.name}} ({{ price.amount }} adet) - {{price.price}} {% endfor %}
       </option>
     </select>
   </div>
