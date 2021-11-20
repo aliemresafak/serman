@@ -37,10 +37,10 @@
                             </span>
                         </label>
                         <div class="input-group input-group-flat">
-                            <input name="password" type="password" class="form-control" placeholder="Şifre"
+                            <input name="password" type="password" id="password" class="form-control" placeholder="Şifre"
                                 autocomplete="off">
                             <span class="input-group-text">
-                                <a class="link-secondary" title="Şifreyi göster" data-bs-toggle="tooltip">
+                                <a id="togglePassword" class="link-secondary" title="Şifreyi göster" data-bs-toggle="tooltip">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                         stroke-linecap="round" stroke-linejoin="round">
@@ -70,6 +70,13 @@
         </div>
     </div>
     <script>
+        const togglePassword = document.getElementById('togglePassword')
+        const password = document.getElementById('password')
+
+        togglePassword.addEventListener('click', (e) => {
+            const type = password.type == "password" ? "text" : "password";
+            password.type = type;
+        })
     </script>
 </body>
 
