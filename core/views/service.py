@@ -12,7 +12,7 @@ class ServiceCreateView(LoginRequiredMixin, CreateView):
     model = Service
     template_name = "service/service_create.html"
     success_url = "/service"
-    fields = ["user", "information", "price"]
+    fields = ["user", "sim_lock_password", "phone_lock_password", "price"]
     context_object_name = "form"
 
     def get_context_data(self, **kwargs):

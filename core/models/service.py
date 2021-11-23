@@ -19,7 +19,8 @@ class Service(CommonField):
     ]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     number = models.CharField(max_length=10, auto_created=True, default=generate_uuid, editable=False)
-    information = models.TextField()
+    sim_lock_password = models.CharField(max_length=20, blank=True)
+    phone_lock_password = models.CharField(max_length=20, blank=True)
     price = models.ForeignKey(Price, on_delete=models.CASCADE)
     status =models.CharField(choices=STATUS_CHOICES, max_length=14, default=WAITING)
 

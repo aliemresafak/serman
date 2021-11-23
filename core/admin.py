@@ -8,7 +8,7 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ("user", "number", "information", "price")
+    list_display = ("user", "number", "sim_lock_password", "phone_lock_password", "price")
 
 
 @admin.register(Price)
