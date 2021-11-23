@@ -7,4 +7,4 @@ class CustomLoginView(LoginView):
 
 
 class CustomLogoutView(LogoutView):
-    template_name = None
+    next_page = "/"
